@@ -1,13 +1,17 @@
 import { defineConfig } from 'vitepress'
 
+// 部署在 GitHub Pages 的 https://na2co32.github.io/csts/
+// 倉庫改名或換自訂網域時只要改這裡
+const base = '/csts/'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-TW',
   title: 'CST 團隊',
   description: 'CST 團隊介紹：成員、理念與聯絡方式',
-  // 部署在 GitHub Pages 的 https://na2co32.github.io/csts/
-  base: '/csts/',
-  head: [['link', { rel: 'icon', href: '/csts/logo.svg' }]],
+  base,
+  // head 不會自動套用 base，要自己加
+  head: [['link', { rel: 'icon', href: `${base}logo.svg` }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.svg',
