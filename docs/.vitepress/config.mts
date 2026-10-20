@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
-// 部署在 GitHub Pages 的 https://na2co32.github.io/csts/
+// 部署在 GitHub Pages 的 https://fhcst.github.io/cyber-service-team-introdution/
 // 倉庫改名或換自訂網域時只要改這裡
-const base = '/csts/'
+const base = '/cyber-service-team-introdution/'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
