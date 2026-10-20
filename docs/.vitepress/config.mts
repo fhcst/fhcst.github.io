@@ -1,8 +1,7 @@
 import { defineConfig } from 'vitepress'
 
-// 部署時由 GitHub Actions 依倉庫自動帶入（見 .github/workflows/deploy.yml）：
-//   fhcst/fhcst.github.io                → /
-//   fhcst/cyber-service-team-introdution → /cyber-service-team-introdution/
+// 部署時由 GitHub Actions 依倉庫自動帶入（見 .github/workflows/deploy.yml），
+// 例如 fhcst/fhcst.github.io → /，一般專案倉庫 → /<倉庫名>/
 // 本機開發預設為 /
 const base = process.env.BASE || '/'
 
