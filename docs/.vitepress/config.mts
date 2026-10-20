@@ -1,8 +1,10 @@
 import { defineConfig } from 'vitepress'
 
-// 部署在 GitHub Pages 的 https://fhcst.github.io/cyber-service-team-introdution/
-// 倉庫改名或換自訂網域時只要改這裡
-const base = '/cyber-service-team-introdution/'
+// 部署時由 GitHub Actions 依倉庫自動帶入（見 .github/workflows/deploy.yml）：
+//   fhcst/fhcst.github.io                → /
+//   fhcst/cyber-service-team-introdution → /cyber-service-team-introdution/
+// 本機開發預設為 /
+const base = process.env.BASE || '/'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
