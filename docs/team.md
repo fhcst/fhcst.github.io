@@ -21,16 +21,16 @@ const others = withAvatarBase(partners)
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title>認識我們的團隊</template>
+    <template #title>工作隊成員資料（待確認）</template>
     <template #lead>
-      CST 團隊由設計、前端、後端與專案管理的夥伴組成，
-      我們一起把好點子變成真正能用的產品。
+      本頁姓名、職稱與介紹沿用原版型，尚未經 FHCST 山城資訊工作隊確認，
+      目前僅供版面示意，不作為正式成員名單。
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers :members="core" />
   <VPTeamPageSection>
-    <template #title>顧問與合作夥伴</template>
-    <template #lead>在背後支持我們的重要夥伴。</template>
+    <template #title>顧問與合作夥伴（版型示例）</template>
+    <template #lead>以下資料僅供版面示意，正式名單待確認。</template>
     <template #members>
       <VPTeamMembers size="small" :members="others" />
     </template>

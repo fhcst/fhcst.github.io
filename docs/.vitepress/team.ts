@@ -2,6 +2,7 @@ import type { DefaultTheme } from 'vitepress'
 
 // 團隊成員資料：修改這裡即可更新「團隊成員」頁面
 // 頭像可換成 /avatars/xxx.png，或直接用 https://github.com/<帳號>.png
+// 以下為原版型示例，尚未確認為 FHCST 正式名單；頁面須保留待確認標示。
 
 export const coreMembers: DefaultTheme.TeamMember[] = [
   {

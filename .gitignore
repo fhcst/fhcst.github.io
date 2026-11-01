@@ -1,3 +1,199 @@
+# FHCST 山城資訊工作隊官方網站及 blog
+# 共用規則：排除可重建產物與本機狀態，保留原始碼、文章與正式素材。
+# 個人專用規則請放 .git/info/exclude 或全域 gitignore。
+# 已追蹤的檔案不受本檔影響；不要為套用規則而清空 Git 索引。
+#
+# 應保留：套件鎖定檔、版本設定、共用工具設定、測試與教學素材。
+# 不使用 *.lock、*.json、*.png、*.svg、*.wasm、lib/ 等過廣規則。
+# 通用 build/dist/out 僅忽略根目錄；子專案可另加自己的 .gitignore。
+#
+# 參考：依本專案需要挑選規則，沒有直接套用整份範本。
+# https://github.com/github/gitignore
+# https://bun.sh/docs/pm/lockfile
+# https://git-scm.com/docs/gitignore
+
+# ----------------------------------------------------------------------
+# 通用：macOS / Windows 系統產物
+# ----------------------------------------------------------------------
+.DS_Store
+.AppleDouble/
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# 通用：編輯暫存、合併備份、執行紀錄
+*~
+*.swp
+*.swo
+*.tmp
+*.temp
+*.orig
+*.rej
+~$*
+.~lock.*#
+*.log
+*.pid
+*.pid.lock
+/logs/
+/tmp/
+/temp/
+/.tmp/
+/.temp/
+.cache/
+
+# 本機環境與機密；範例檔只填占位值，不能填真實金鑰。
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.*.example
+!.env.*.sample
+!.env.*.template
+/.secrets/
+/secrets/
+/.credentials/
+.netrc
+_netrc
+.pypirc
+
+# 編輯器：保留可供全隊共用的 VS Code 設定。
+/.vscode/*
+!/.vscode/settings.json
+!/.vscode/extensions.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+!/.vscode/*.code-snippets
+.vscode-test/
+.history/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/shelf/
+.idea/**/dataSources/
+.idea/**/dataSources.local.xml
+.idea/**/httpRequests/
+
+# 通用：根目錄建置產物與測試報告
+/dist/
+/build/
+/out/
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+lcov.info
+*.lcov
+/test-results/
+/playwright-report/
+/blob-report/
+
+# ----------------------------------------------------------------------
+# Node.js / npm / pnpm / Yarn / TypeScript
+# ----------------------------------------------------------------------
 node_modules/
-docs/.vitepress/dist/
-docs/.vitepress/cache/
+.npm/
+.pnpm-store/
+.node_repl_history
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.nyc_output/
+.parcel-cache/
+.vite/
+.turbo/
+vite.config.*.timestamp-*
+/*.tgz
+
+# Yarn 快取與安裝狀態；保留補丁與共用版本工具。
+/.pnp.*
+/.yarn/*
+!/.yarn/patches/
+!/.yarn/plugins/
+!/.yarn/releases/
+!/.yarn/sdks/
+!/.yarn/versions/
+.yarn-integrity
+
+# 保留 package-lock.json、npm-shrinkwrap.json、pnpm-lock.yaml、yarn.lock，
+# 以及 .npmrc、.yarnrc.yml、.nvmrc、.node-version 等共用設定。
+# 本專案目前仍使用 npm；新增規則不代表改用其他套件管理工具。
+
+# ----------------------------------------------------------------------
+# Bun：依賴同樣位於 node_modules/；也排除儲存庫內的本機 Bun 狀態。
+# ----------------------------------------------------------------------
+.bun/
+# 保留 bun.lock、舊格式 bun.lockb 與 bunfig.toml。
+
+# ----------------------------------------------------------------------
+# 本專案：VitePress（根目錄及巢狀站點均適用）
+# ----------------------------------------------------------------------
+**/.vitepress/dist/
+**/.vitepress/cache/
+# 不忽略整個 .vitepress/：config、theme、team 等原始碼必須保留。
+
+# ----------------------------------------------------------------------
+# Python：位元碼、虛擬環境、套件與工具快取
+# ----------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+/venv/
+/env/
+/ENV/
+/venv.bak/
+/env.bak/
+__pypackages__/
+.eggs/
+*.egg-info/
+*.egg
+/wheels/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyre/
+.hypothesis/
+.tox/
+.nox/
+.dmypy.json
+dmypy.json
+.pdm-python
+.pdm-build/
+.uv-cache/
+.ipynb_checkpoints/
+cython_debug/
+
+# 保留 pyproject.toml、requirements*.txt、uv.lock、poetry.lock、
+# Pipfile.lock、pdm.lock、.python-version、.ipynb 與 PyInstaller .spec。
+# 巢狀 Python 子專案建議使用 .venv/；其他輸出位置由子專案補規則。
+
+# ----------------------------------------------------------------------
+# Rust / Cargo：標準編譯產物、格式化備份與診斷輸出
+# ----------------------------------------------------------------------
+target/
+*.rs.bk
+rustc-ice-*.txt
+mutants.out*/
+*.profraw
+*.profdata
+
+# 保留 Cargo.toml、Cargo.lock、rust-toolchain.toml、rustfmt.toml，
+# 以及 .cargo/config.toml 等共用設定。
