@@ -1,4 +1,38 @@
-# FHCST 山城資訊工作隊官方網站及 blog
+<p align="center">
+  <a href="https://fhcst.github.io/">
+    <img src="blogs/public/brand/fhcst-banner.png" alt="FHCST 山城資訊工作隊｜臺北市立復興高級中學資安團隊" width="100%">
+  </a>
+</p>
+
+<h1 align="center">FHCST 山城資訊工作隊</h1>
+
+<p align="center">官方網站及 blog · 老師與學生共同編輯，讓想法成為作品。</p>
+
+<p align="center">
+  <a href="https://github.com/fhcst/fhcst.github.io/actions/workflows/deploy.yml">
+    <img src="https://github.com/fhcst/fhcst.github.io/actions/workflows/deploy.yml/badge.svg?branch=main" alt="main 分支的 GitHub Pages 建置與部署狀態">
+  </a>
+  <a href="blogs/contributing/getting-started.md">
+    <img src="https://img.shields.io/badge/Node.js-22.x-339933?logo=nodedotjs&amp;logoColor=white" alt="Node.js 22.x">
+  </a>
+  <a href="package.json">
+    <img src="https://img.shields.io/badge/VitePress-2.0.0--alpha.20-646CFF?logo=vitepress&amp;logoColor=white" alt="VitePress 2.0.0-alpha.20">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-0B4F9C?logo=creativecommons&amp;logoColor=white" alt="授權：CC BY-NC-SA 4.0">
+  </a>
+  <a href="CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/Contributions-welcome-2E8B57?logo=github&amp;logoColor=white" alt="歡迎參與貢獻">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://fhcst.github.io/"><strong>官方網站</strong></a> ·
+  <a href="blogs/contributing/index.md"><strong>協作指南</strong></a> ·
+  <a href="CONTRIBUTING.md"><strong>參與貢獻</strong></a>
+</p>
+
+---
 
 本專案是 **FHCST 山城資訊工作隊的官方網站及 blog**，由老師與學生共同編輯管理。網站使用 VitePress，原始碼位於 [fhcst/fhcst.github.io](https://github.com/fhcst/fhcst.github.io)。
 

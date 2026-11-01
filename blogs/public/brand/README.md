@@ -4,7 +4,7 @@
 
 | 檔案 | 原附件名稱 | 尺寸 | 使用位置 |
 | --- | --- | --- | --- |
-| `fhcst-banner.png` | 臺北復興高中資安團隊科技 banner.png | 1983 × 793 | 首頁上方橫幅，依原比例顯示 |
+| `fhcst-banner.png` | 臺北復興高中資安團隊科技 banner.png | 1983 × 793 | 網站首頁與根目錄 README 頁首橫幅，依原比例顯示 |
 | `fhcst-logo.png` | FHCST_LOGO.png | 512 × 512 | 導覽列、首頁 logo 與 PNG favicon |
 | `fhcst-logo-original.png` | ChatGPT 圖像 2026年11月1日 下午03_18_58.png | 1254 × 1254 | 保留提供的另一版原圖，供後續使用 |
 
@@ -15,6 +15,7 @@ favicon 直接使用提供的 512 × 512 PNG，交由瀏覽器依分頁圖示尺
 - 導覽列 logo 與 favicon：`blogs/.vitepress/config.mts`。
 - 首頁 hero 的 logo：`blogs/index.md`。
 - 首頁 banner 與顯示樣式：`blogs/.vitepress/theme/Layout.vue`。
+- 儲存庫首頁的 banner、badges 與導覽捷徑：根目錄 `README.md`；banner 使用儲存庫相對路徑 `blogs/public/brand/fhcst-banner.png`。
 
 靜態素材網址使用 `/brand/檔名`，不包含 `public`；元件與 favicon 已處理部署的 base 路徑。
 
