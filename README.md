@@ -38,7 +38,7 @@
 
 本專案歡迎內容整理、錯字修正、版面改善與程式貢獻。第一次參與時，先完成一個小任務，再逐步接觸網站設定與部署。
 
-> 協作文件為本次整理提出的待審閱版本。操作方式以 VS Code＋Git 為主；授權依專案負責人指定採用 CC BY-NC-SA，具體版本採 4.0 國際版。已確認的角色與待核對的設定集中記錄於 [PROJECT.md](PROJECT.md)。
+> 協作採學生 Fork＋PR，操作方式以 VS Code＋Git 為主；授權依專案負責人指定採用 CC BY-NC-SA，具體版本採 4.0 國際版。GitHub 設定規格見[儲存庫規則](.github/REPOSITORY_RULES.md)，已確認與待核對的狀態集中記錄於 [PROJECT.md](PROJECT.md)。
 
 ## 從這裡開始
 
@@ -59,9 +59,12 @@
 
 準備 Git、VS Code 與 **Node.js 22.x**。專案目前部署環境也使用 Node.js 22，VitePress 固定為 `2.0.0-alpha.20`；請依鎖定檔安裝，不要順手升級。
 
+一般學生先在本儲存庫按 **Fork**，建立自己帳號下的副本。下列 `YOUR_GITHUB_USERNAME` 請替換為自己的 GitHub 帳號；`origin` 指向自己的 fork，`upstream` 指向原專案。
+
 ```sh
-git clone https://github.com/fhcst/fhcst.github.io.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/fhcst.github.io.git
 cd fhcst.github.io
+git remote add upstream https://github.com/fhcst/fhcst.github.io.git
 npm ci
 npm run blogs:dev
 ```
@@ -79,8 +82,11 @@ npm run blogs:preview
 
 ```text
 .github/
+  CODEOWNERS              指定正式審查 Team
+  REPOSITORY_RULES.md      儲存庫規則與人員交接
   ISSUE_TEMPLATE/          回報問題、提案與求助範本
   PULL_REQUEST_TEMPLATE.md 提交變更時的說明與檢查表
+  workflows/pr-checks.yml PR 建置檢查
   workflows/deploy.yml    main 分支的建置與 Pages 部署
 blogs/
   index.md               網站首頁
@@ -106,7 +112,7 @@ package-lock.json        鎖定套件版本
 
 採用「Issue → 工作分支 → Pull Request（PR）→ 審查 → 合併 → 確認部署」。多人同時修改前，先在 Issue 說明要改的檔案，避免覆蓋彼此的工作。具體規則見[貢獻指南](CONTRIBUTING.md)。
 
-現有 [deploy.yml](.github/workflows/deploy.yml) 在推送到 `main` 或手動執行時建置並部署 GitHub Pages，**沒有 PR 觸發的建置檢查**。分支保護、必要審查與 Pages 設定是否啟用，須由管理者實際確認，不能以文件存在推定已生效。
+[pr-checks.yml](.github/workflows/pr-checks.yml) 在 PR 階段執行 `vitepress-build`；[deploy.yml](.github/workflows/deploy.yml) 在推送到 `main` 或手動執行時建置並部署 GitHub Pages。一般學生的 PR 由 Na2CO32 審查與合併；Na2CO32 的 PR 由 CXPhoenix 審查。必要核准與建置、指定合併者由兩組 ruleset 分別控制；首次導入與實際啟用狀態見 [PROJECT.md](PROJECT.md)。
 
 ## 授權
 

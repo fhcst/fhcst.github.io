@@ -9,7 +9,7 @@ description: 使用 VS Code 與 Git 共同維護 FHCST 山城資訊工作隊官�
 
 你不需要一次學完 Git。第一次參與的目標，是完成一個小修改，讓另一位同學看得懂你的變更，並能確認它正確。
 
-本指南搭配儲存庫的[貢獻規則](https://github.com/fhcst/fhcst.github.io/blob/main/CONTRIBUTING.md)使用。目前負責合併的維護者是 [@Na2CO32](https://github.com/Na2CO32)，PR 仍須先取得非作者審查同意。安全或行為問題請透過課程既有私下管道聯絡 **CXPhoenix**。
+本指南搭配儲存庫的[貢獻規則](https://github.com/fhcst/fhcst.github.io/blob/main/CONTRIBUTING.md)使用。一般學生使用 Fork＋PR，由 [@Na2CO32](https://github.com/Na2CO32) 正式審查並合併；Na2CO32 自己的 PR 由 **CXPhoenix** 審查。安全或行為問題請透過課程既有私下管道聯絡 CXPhoenix。
 
 ## 建議閱讀順序
 
@@ -27,7 +27,7 @@ description: 使用 VS Code 與 Git 共同維護 FHCST 山城資訊工作隊官�
 - PR 如實記錄建置與預覽結果；還沒完成的項目保持未勾選。
 - 回應審查意見，由維護者完成合併與部署確認。
 
-本次規範文件仍待審閱；待決事項記錄於 [PROJECT.md](https://github.com/fhcst/fhcst.github.io/blob/main/PROJECT.md)。
+Fork＋PR 與人員分工已由負責人確認；規則導入與待決事項記錄於 [PROJECT.md](https://github.com/fhcst/fhcst.github.io/blob/main/PROJECT.md)。
 
 ## 不知道下一步時
 
