@@ -4,7 +4,7 @@ title: Git 協作流程
 
 # Git 協作流程
 
-共同編輯不代表大家直接修改同一個 `main`。每人使用自己的工作分支，透過 PR 讓同學和維護者看見變更。開始前先依[貢獻指南](https://github.com/fhcst/fhcst.github.io/blob/main/CONTRIBUTING.md)確認任務。
+共同編輯不代表大家直接修改同一個 `main`。一般學生使用自己的 fork 與工作分支，透過 PR 讓同學和維護者看見變更；不需取得原儲存庫寫入權。開始前先依[貢獻指南](https://github.com/fhcst/fhcst.github.io/blob/main/CONTRIBUTING.md)確認任務。
 
 下列分支名與 Issue 編號皆為示例，請換成自己任務的名稱。指令在專案根目錄執行。若不確定目前狀態，先執行 `git status`，不要用重設或清除指令讓畫面「看起來乾淨」。
 
@@ -79,7 +79,7 @@ git push -u origin docs/issue-12-team-profile
 
 到 GitHub 使用 **Compare & pull request**，確認目標儲存庫為 `fhcst/fhcst.github.io`、base 為 `main`，來源為自己的工作分支。依 PR 範本寫下原因、變更、來源和實際檢查。
 
-尚未完成時開 Draft PR。沒有跑過的建置或預覽不要勾選；說明原因並請維護者協助。現有 workflow **不會在 PR 階段自動建置**，不能以「沒有紅燈」當成建置通過。
+尚未完成時開 Draft PR。沒有跑過的本機建置或預覽不要勾選；說明原因並請維護者協助。PR workflow 執行 `vitepress-build`；外部貢獻者可能需先等待維護者允許執行。允許 workflow 執行與正式核准 PR 是不同操作，須看到最新版本的實際建置結果。首次導入狀態見[專案紀錄](https://github.com/fhcst/fhcst.github.io/blob/main/PROJECT.md)。
 
 ## 5. 回應意見與處理衝突
 
@@ -105,7 +105,7 @@ git merge upstream/main
 
 ## 6. 合併後確認
 
-由指定維護者在取得他人審查同意、完成檢查後合併。合併後查看 Actions 與實際網站，兩者確認後再回報發布結果。作者開始下一個任務前，重新同步最新 `main`，使用新的分支名。
+合併前先同步最新 `main`、確認建置並取得重新審查。一般學生的 PR 由 Na2CO32 正式核准並以 Squash merge 合併；Na2CO32 自己的 PR 由 CXPhoenix 核准。合併後查看 Actions 與實際網站，兩者確認後再回報發布結果。作者開始下一個任務前，重新同步最新 `main`，使用新的分支名。學生 fork 裡的舊工作分支由學生自行整理。
 
 ## 臨時使用 GitHub 網頁編輯
 

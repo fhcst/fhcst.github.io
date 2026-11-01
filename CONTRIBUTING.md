@@ -2,9 +2,11 @@
 
 歡迎參與 **FHCST 山城資訊工作隊官方網站及 blog** 的維護。修正錯字、改善替代文字、整理資料與協助審查，都是貢獻，不必等到能開發新功能才開始。
 
-這份指南是學生與維護者的共同協作基準草案，待文件合併後採用；它描述應遵循的流程，不代表 GitHub 已設定好強制檢查。角色與權限見[專案治理](GOVERNANCE.md)。
+這份指南是學生與維護者的共同協作基準。一般學生使用自己的 Fork＋PR，不取得原儲存庫寫入權。角色與權限見[專案治理](GOVERNANCE.md)，GitHub 設定規格與查驗狀態分別見[儲存庫規則](.github/REPOSITORY_RULES.md)與 [PROJECT.md](PROJECT.md)。
 
 目前負責合併的維護者為 [@Na2CO32](https://github.com/Na2CO32)。安全與行為問題請依相應政策，透過課程既有私下管道聯絡 **CXPhoenix**。
+
+一般學生的 PR 由 Na2CO32 正式核准並合併；Na2CO32 自己的 PR 由 CXPhoenix 核准；CXPhoenix 的 PR 由 Na2CO32 核准並合併。新增學生審查者或合併者須由 CXPhoenix 指定，不能自行推定取得權限。
 
 ## 先掌握六件事
 
@@ -77,7 +79,7 @@ PR 目標為 `fhcst/fhcst.github.io` 的 `main`。依範本填寫：
 - [ ] 涉及網站的變更已預覽受影響頁面，檢查窄螢幕、圖片及連結；純根目錄規範變更可註明不適用。
 - [ ] 至少一位非作者審查者同意；未解決意見已處理。
 
-目前沒有 `npm test` 或 lint 指令，也沒有 PR 自動建置 workflow，請勿在 PR 宣稱已通過不存在的檢查。
+PR 建置由 `.github/workflows/pr-checks.yml` 的 `vitepress-build` 執行；必須確認最新提交的實際結果，等待 workflow 核准不代表建置通過。合併前需同步最新 `main`，有新變更時重新審查。現有專案沒有 `npm test` 或 lint 指令，請勿宣稱已通過不存在的檢查。首次導入的生效狀態見 [PROJECT.md](PROJECT.md)。
 
 ## 回應審查與後續
 

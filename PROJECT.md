@@ -26,14 +26,14 @@
 
 | 事項 | 目前狀態 | 後續完成條件 |
 | --- | --- | --- |
-| 維護者與替代聯絡窗口 | 已指定合併維護者 `Na2CO32` 與主要通報窗口 `CXPhoenix`；替代窗口未指定 | 查驗維護者實際權限，指定不涉入同一事件的替代窗口 |
+| 維護者與替代聯絡窗口 | 已查驗 CXPhoenix 為 Admin、Na2CO32 為 Maintain；替代窗口未指定 | 指定不涉入同一事件的替代窗口 |
 | 安全與行為通報管道 | 學生透過課程既有私下管道聯絡 `CXPhoenix`；未提供對外信箱或私訊入口 | 補齊對外聯絡方式，查驗私人漏洞回報設定 |
-| GitHub 保護與權限 | 未查驗遠端設定 | 管理者依維護者檢查表核對，另記錄實際完成狀態 |
-| PR 自動建置 | 現有 workflow 未提供 | 若要加入，以獨立變更提出並驗證；不可先宣稱存在 |
+| GitHub 保護與權限 | 已確認 Fork＋PR 方案；Team 與 repo 設定已套用，ruleset 導入進度見文末 | 依文末紀錄讀回實際設定，維持兩組規則分工 |
+| PR 自動建置 | 本次獨立 PR 新增 `pr-checks.yml` 與 `vitepress-build`；驗證及合併狀態見文末 | 實際成功後設定必要檢查，經 Na2CO32 審查合併 |
 | 既有內容真實性 | 沿革、服務敘述與成員資料已在公開頁面標示為版型示例；範例聯絡信箱已移除，成員個別社群連結仍待確認 | 逐項向負責人核對後另開內容 PR，不將版型示例當作正式資訊 |
 | 圖片與來源 | logo 與 banner 已換用負責人提供的原圖並記錄來源；素材構成權利與六張既有頭像仍未盤點完成 | 依授權指南補齊原作者、權利與公開使用確認，必要時替換 |
 | 歷史貢獻授權 | 本次授權聲明不代替既有作者／素材權利核對 | 由負責人確認既有內容授權權限，保留必要第三方聲明 |
-| 文件正式採用 | 本機文件待審閱 | 負責人審閱協作門檻後，依團隊流程納入預設分支 |
+| 文件正式採用 | 負責人已確認 Fork＋PR 與審查分工；此次文件更新待獨立 PR 合併 | 依團隊流程納入預設分支，不以方案同意代替 PR 正式核准 |
 
 同意書、真實學生名單與其他私人證據不存入公開 Git；本表僅記錄處理狀態。
 
@@ -70,3 +70,17 @@
 ## 接續方式
 
 先讀本文件與 [GLOSSARY.md](GLOSSARY.md)，再依[維護者檢查表](blogs/contributing/maintainers.md)完成角色與設定核對。任何尚未查驗的項目，在取得實際證據前保留「未確認」狀態。
+
+## 儲存庫規則導入（2026-11-01）
+
+負責人已確認採用[儲存庫規則](.github/REPOSITORY_RULES.md)。一般學生使用 Fork＋PR；一般學生與 CXPhoenix 的 PR 由 Na2CO32 審查與合併；Na2CO32 的 PR 由 CXPhoenix 審查。新增正式審查及合併學生由負責人指定，透過兩個 Team 管理。
+
+- 遠端基底為 `main` 的 `794192b`；本次交付分支為 `codex/repo-rules`。初始查驗沒有 ruleset，`main` 未受保護；組織預設 repo 權限為 none。
+- 已建立 closed 的 `site-reviewers`、`site-mergers`，初始均只含 CXPhoenix、Na2CO32，明確授予本 repo Write；原本個別 Admin／Maintain 權限保留。CXPhoenix 管理 Team 成員，Na2CO32 為 Team member。
+- 已套用僅 Squash merge、關閉 auto-merge、合併後刪除原 repo 工作分支、secret scanning 與 push protection。未開啟自動依賴升級。
+- 已設定外部 Fork workflow 需核准（`all_external_contributors`）；Actions 預設 token 保持 read，禁止 Actions 產生核准 review。Pages 維持 HTTPS、Actions 發布及只允許 `main` 的部署分支政策。
+- 本次新增 PR 建置與 CODEOWNERS，並同步協作文件；既有正式部署 workflow、依賴版本及鎖定檔不變。
+- `main-quality` 與 `main-mergers` 將在觀察到實際 PR build 成功後啟用並讀回驗證；目前不得把本段規格當成已啟用的證據。
+- CODEOWNERS 在此次 PR 合併至 `main` 前，尚不能自動指派後續 PR 的審查者。此次 PR 作者為 CXPhoenix，須由 Na2CO32 正式核准；自動化不代替人員審查。
+
+較前面的「先前文件整理」紀錄保留當時的證據範圍；本節為此次遠端規則導入的接續狀態。

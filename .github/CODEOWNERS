@@ -1,0 +1,5 @@
+# Team membership is managed by CXPhoenix. The team has explicit repository Write access.
+# Named routing: student PRs -> Na2CO32; Na2CO32's PRs -> CXPhoenix.
+# GitHub enforces a non-author owner approval; the named routing is a team policy.
+# This pattern also protects this CODEOWNERS file and both workflows.
+* @fhcst/site-reviewers

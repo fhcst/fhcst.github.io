@@ -9,7 +9,7 @@ title: 環境與第一次啟動
 ## 1. 準備工具與帳號
 
 - 安裝 [Git](https://git-scm.com/downloads)、[VS Code](https://code.visualstudio.com/) 與 [Node.js 22.x](https://nodejs.org/en/download)。npm 隨 Node.js 提供。
-- 準備自己的 GitHub 帳號；沒有原儲存庫寫入權仍可用 fork 提交。
+- 準備自己的 GitHub 帳號；一般學生使用 Fork＋PR，不需原儲存庫寫入權。
 - 確認可以公開使用的 Git 提交名稱與信箱。可使用 GitHub 設定提供的 noreply 信箱，避免公開私人信箱。
 
 開啟終端機檢查：
@@ -24,14 +24,16 @@ Node.js 應顯示 `v22.x.x`，與專案現有 Actions 的主要版本一致。�
 
 ## 2. 取得專案
 
-有原儲存庫寫入權時，在你選好的工作資料夾執行：
+一般學生先到[原儲存庫](https://github.com/fhcst/fhcst.github.io)按 **Fork**，在自己的帳號下建立副本。在選好的工作資料夾執行下列指令，將 `YOUR_GITHUB_USERNAME` 替換為自己的帳號：
 
 ```sh
-git clone https://github.com/fhcst/fhcst.github.io.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/fhcst.github.io.git
 cd fhcst.github.io
+git remote add upstream https://github.com/fhcst/fhcst.github.io.git
+git remote -v
 ```
 
-沒有寫入權時，先在 GitHub 按 Fork，再複製自己 fork 的 HTTPS 位址進行 clone；後續設定見[Git 協作流程](workflow.md)。不要把個人存取權杖寫進網址。
+確認 `origin` 指向自己的 fork，`upstream` 指向 `fhcst/fhcst.github.io`。已存在的 remote 不重複新增；後續同步與工作分支見[Git 協作流程](workflow.md)。不要把個人存取權杖寫進網址。經指定有原儲存庫寫入權的維護者，也可 clone 原儲存庫，依協作流程的維護者路徑操作。
 
 在 VS Code 使用「開啟資料夾」選取 `fhcst.github.io`。確認終端機所在資料夾內有 `package.json`。
 
