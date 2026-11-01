@@ -29,7 +29,7 @@
 
 ## main-quality
 
-目標為 `refs/heads/main`，enforcement 為 Active，bypass 名單留空。
+目標為 `refs/heads/main`，enforcement 為 Active。Organization Owner 可使用 **For pull requests only** bypass；一般學生與審查／合併 Team 不具有這組規則的 bypass。
 
 - 必須透過 PR，至少 1 位非作者核准，並須取得 Code Owner 核准。
 - 新變更使舊核准失效，合併前解決所有 review conversations。
@@ -41,11 +41,11 @@
 
 ## main-mergers
 
-目標同為 `refs/heads/main`，enforcement 為 Active。這組只設定 Restrict updates，bypass 僅授予 `site-mergers`，模式為 **For pull requests only**。
+目標同為 `refs/heads/main`，enforcement 為 Active。這組只設定 Restrict updates，bypass 授予 `site-mergers` 與 Organization Owner，模式均為 **For pull requests only**。
 
-這個 bypass 只允許指定 Team 更新 `main`，不能繞過另一組 `main-quality` 的建置、核准及歷史保護。兩組不可合併成一組再授予合併者整組 bypass。一般審查者即使具有 Write，也不能合併至 `main`。
+Team 的 bypass 只允許指定合併者更新 `main`，不能繞過另一組 `main-quality` 的建置、核准及歷史保護。Organization Owner 則在兩組規則都有獨立的 PR bypass。兩組不可合併成一組再授予學生合併者整組 bypass。一般審查者即使具有 Write，也不能合併至 `main`。
 
-管理者日常同樣遵守品質規則。若緊急事故確需調整規則，由 CXPhoenix 評估並記錄原因、範圍、調整時間與恢復結果；本規格不預先授權例外操作。
+Organization Owner（目前 CXPhoenix）可以透過 PR 強制合併，包含自己的 PR；不會因缺少他人核准、必要建置或其他品質條件而失去合併權。GitHub 頁面的一般檢查狀態仍可能顯示未符合，Owner 可選擇繞過規則。這是 Owner 的例外權限，學生及一般 repo Admin／Maintain 不因其角色而自動取得。此例外不開放直接推送、force push 或刪除 `main`；仍須經 PR，建議在 PR 說明使用原因。
 
 ## Actions 與發布
 
@@ -78,4 +78,4 @@
 
 先建立 Team 與權限，再透過 PR 加入建置及 CODEOWNERS。看到實際的 PR build 成功後才設定必要檢查，並讀回兩組 ruleset、Team、Actions、Pages 與安全設定。
 
-首次新增的 CODEOWNERS 須經審查合併至 `main` 後，才會用於後續 PR 的自動審查指派。首次導入 PR 的作者若是 CXPhoenix，仍須由 Na2CO32 正式核准，不由自動化假冒審查。
+首次新增的 CODEOWNERS 須合併至 `main` 後，才會用於後續 PR 的自動審查指派。首次導入 PR 的作者若是 CXPhoenix，一般流程由 Na2CO32 正式核准；CXPhoenix 也可依 Owner 例外自行決定強制合併。自動化不假冒他人審查，是否合併由使用者另行指示。

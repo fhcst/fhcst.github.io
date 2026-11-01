@@ -81,9 +81,15 @@
 - 已設定外部 Fork workflow 需核准（`all_external_contributors`）；Actions 預設 token 保持 read，禁止 Actions 產生核准 review。Pages 維持 HTTPS、Actions 發布及只允許 `main` 的部署分支政策。
 - 本次新增 PR 建置與 CODEOWNERS，並同步協作文件；既有正式部署 workflow、依賴版本及鎖定檔不變。
 - [PR #5](https://github.com/fhcst/fhcst.github.io/pull/5) 的首次 `vitepress-build` 已[遠端成功執行](https://github.com/fhcst/fhcst.github.io/actions/runs/41292915765)，檢查來源為 GitHub Actions（app ID `15368`）。之後已啟用並讀回核對 [main-quality](https://github.com/fhcst/fhcst.github.io/rules/26306169) 與 [main-mergers](https://github.com/fhcst/fhcst.github.io/rules/26306170)。
-- 已逐項讀回驗證 Team 成員與 Write 權限、原有 Admin／Maintain、Squash-only、auto-merge 關閉、分支清理、安全選項、Fork workflow 核准、Actions 預設權限及 Pages 政策；有效 `main` 規則包含 PR、必要建置、更新限制、禁止刪除及 force push，`main` 回報 protected。品質規則沒有 bypass；更新限制只有 `site-mergers` 的 PR 模式 bypass。
+- 已逐項讀回驗證 Team 成員與 Write 權限、原有 Admin／Maintain、Squash-only、auto-merge 關閉、分支清理、安全選項、Fork workflow 核准、Actions 預設權限及 Pages 政策；有效 `main` 規則包含 PR、必要建置、更新限制、禁止刪除及 force push，`main` 回報 protected。初始品質規則沒有 bypass，後續依負責人要求增加下述 Owner 例外；學生 Team 的品質門檻不變。
 - CODEOWNERS API 驗證沒有錯誤。PR 在建置成功時仍回報 `REVIEW_REQUIRED`、`BLOCKED`，沒有被自動核准或合併；已指定 Na2CO32 審查。後續提交以 PR 最新 Actions 結果為準。
 - 本機 `npm run blogs:build`、Git 空白與 Markdown UTF-8 檢查通過；獨立唯讀審查的兩項文件問題已修正。本次沒有重新執行瀏覽器視覺檢查，也沒有部署；未以測試學生帳號實際嘗試合併，權限驗證以 API 設定與現有 PR 狀態為證。
-- CODEOWNERS 在此次 PR 合併至 `main` 前，尚不能自動指派後續 PR 的審查者。此次 PR 作者為 CXPhoenix，須由 Na2CO32 正式核准；自動化不代替人員審查。
+- CODEOWNERS 在此次 PR 合併至 `main` 前，尚不能自動指派後續 PR 的審查者。此次 PR 作者為 CXPhoenix，一般流程由 Na2CO32 正式核准；Owner 也可使用下述例外強制合併。自動化不代替人員審查。
+
+### Owner 強制合併例外
+
+負責人要求 Owner 可自行強制合併，以免等待他人審查造成阻擋。已在 `main-quality` 與 `main-mergers` 新增 `OrganizationAdmin` actor 的 `pull_request` bypass，讀回確認目前登入的 CXPhoenix 在兩組規則均為 `current_user_can_bypass: pull_requests_only`。其他規則參數與原本 `site-mergers` 的 Team bypass 均保持原狀。
+
+此例外允許 Organization Owner 透過 PR 略過審查與檢查條件，不允許直接推送、force push 或刪除 `main`。GitHub 的一般 PR 狀態仍可能回報 `REVIEW_REQUIRED`／`BLOCKED`，不代表 Owner 沒有 bypass 權限。本次只設定權限，不代使用者合併 PR。
 
 較前面的「先前文件整理」紀錄保留當時的證據範圍；本節為此次遠端規則導入的接續狀態。

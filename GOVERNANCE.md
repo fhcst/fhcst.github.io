@@ -24,7 +24,9 @@
 
 一般學生不取得原儲存庫寫入權，使用自己的 fork＋PR。一般學生及外部貢獻者的 PR 由 Na2CO32 審查與合併；Na2CO32 自己的 PR 由 CXPhoenix 審查，核准後可由 Na2CO32 合併；CXPhoenix 的 PR 由 Na2CO32 審查與合併。
 
-`site-reviewers` 與 `site-mergers` 分別管理正式審查與合併人選，初始成員均為 CXPhoenix、Na2CO32。新增審查學生須由 CXPhoenix 指定並加入前者；可合併者須另外加入後者。新任學生原則上只給 Write；審查與合併能力透過兩組 ruleset 分開控制，不授予品質規則 bypass。團隊的人名分工仍須人工遵守，GitHub 原生 CODEOWNERS 不會依 PR 作者切換指定個人。
+`site-reviewers` 與 `site-mergers` 分別管理正式審查與合併人選，初始成員均為 CXPhoenix、Na2CO32。新增審查學生須由 CXPhoenix 指定並加入前者；可合併者須另外加入後者。新任學生原則上只給 Write；審查與合併能力透過兩組 ruleset 分開控制，不授予學生品質規則 bypass。團隊的人名分工仍須人工遵守，GitHub 原生 CODEOWNERS 不會依 PR 作者切換指定個人。
+
+Organization Owner（目前 CXPhoenix）另有兩組規則的 PR-only bypass，可以在審查或檢查條件未滿足時強制合併，包含自己的 PR；其他學生與一般 repo 管理角色不因此取得例外。Owner 仍透過 PR 操作，不直接推送或改寫 `main`。一般協作仍依下列審查分工執行，Owner 可自行決定是否使用例外。
 
 ## 一般變更如何決定
 
