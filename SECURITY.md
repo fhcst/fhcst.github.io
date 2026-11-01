@@ -18,7 +18,7 @@
 2. 若無此入口，學生請使用課程既有的私下管道聯絡 **CXPhoenix**。
 3. 外部回報者若沒有私下窗口，可在 [Issues](https://github.com/fhcst/fhcst.github.io/issues) 只詢問「請提供安全通報的私下聯絡方式」。不要附漏洞細節、受害人資料或敏感連結。
 
-目前尚未提供專用安全信箱或公開私訊入口，也沒有承諾回覆或修復時限。主要窗口已指定，管理者仍應依[維護者檢查表](docs/contributing/maintainers.md)補齊對外聯絡方式及替代窗口；不要使用 `team@example.com` 等範例信箱通報。
+目前尚未提供專用安全信箱或公開私訊入口，也沒有承諾回覆或修復時限。主要窗口已指定，管理者仍應依[維護者檢查表](blogs/contributing/maintainers.md)補齊對外聯絡方式及替代窗口；不要使用 `team@example.com` 等範例信箱通報。
 
 ## 私下回報需要什麼
 

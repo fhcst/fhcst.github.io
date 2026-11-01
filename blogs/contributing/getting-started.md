@@ -60,7 +60,7 @@ npm ci
 ## 4. 看見本機網站
 
 ```sh
-npm run docs:dev
+npm run blogs:dev
 ```
 
 開啟終端機顯示的網址，通常為 `http://localhost:5173`；埠號被占用時可能不同。應能看到首頁，也能開啟成員與關於頁面。修改後確認畫面更新。停止伺服器時在該終端機按 `Ctrl+C`。
@@ -72,24 +72,24 @@ npm run docs:dev
 在另一個終端機，或停止開發伺服器後執行：
 
 ```sh
-npm run docs:build
-npm run docs:preview
+npm run blogs:build
+npm run blogs:preview
 ```
 
 第一個指令需成功結束；第二個指令會持續提供本機預覽。開啟其顯示的網址，通常為 `http://localhost:4173`，檢查本次修改的頁面、圖片與連結，並縮窄瀏覽器寬度確認內容可讀。預覽使用上一次的建置產物，後續有修改就要重新建置。
 
-`node_modules/`、`docs/.vitepress/dist/` 與 `docs/.vitepress/cache/` 已被忽略，不要強制加入 Git。
+`node_modules/`、`blogs/.vitepress/dist/` 與 `blogs/.vitepress/cache/` 已被忽略，不要強制加入 Git。
 
 ## 常見問題
 
 | 狀況 | 先檢查 |
 | --- | --- |
 | `ENOENT` 或找不到 `package.json` | 終端機是否在專案根目錄 |
-| PowerShell 說無法載入 `npm.ps1` | 可改執行 `npm.cmd ci`、`npm.cmd run docs:dev`；不要為了執行專案任意放寬全機安全設定 |
+| PowerShell 說無法載入 `npm.ps1` | 可改執行 `npm.cmd ci`、`npm.cmd run blogs:dev`；不要為了執行專案任意放寬全機安全設定 |
 | `npm ci` 失敗 | Node.js 版本、網路與完整錯誤訊息；若提示鎖定檔不一致，先求助，不刪鎖定檔重裝 |
 | Git 推送遭拒 | 檢查登入帳號、是否有寫入權、是否推到自己的分支；沒有權限時用 fork |
 | 網站打不開 | 伺服器是否還在執行、是否使用終端機實際提供的網址 |
-| 圖片在部署後不見 | 檔名大小寫、`docs/public/` 路徑及 base；見[內容規範](content-style.md) |
+| 圖片在部署後不見 | 檔名大小寫、`blogs/public/` 路徑及 base；見[內容規範](content-style.md) |
 | 看到 audit 或更新提示 | 與實際安裝／建置錯誤分開記錄，由維護者評估，不逕自強制升級 |
 
 無法排除時，依[求助說明](https://github.com/fhcst/fhcst.github.io/blob/main/SUPPORT.md)提供已遮蔽敏感資訊的步驟與錯誤訊息。

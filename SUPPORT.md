@@ -20,11 +20,11 @@
 
 ```text
 想完成：在本機預覽成員頁面。
-步驟：npm ci → npm run docs:dev → 開啟終端機提供的網址。
+步驟：npm ci → npm run blogs:dev → 開啟終端機提供的網址。
 預期：能看到頭像。
 實際：頁面有顯示，某張頭像沒有出現。
-位置：docs/.vitepress/team.ts，本次 PR 連結另附。
-已嘗試：檢查檔名大小寫與 docs/public/avatars/ 內的檔案。
+位置：blogs/.vitepress/team.ts，本次 PR 連結另附。
+已嘗試：檢查檔名大小寫與 blogs/public/avatars/ 內的檔案。
 ```
 
 錯誤訊息請以文字貼上並使用程式碼區塊；版面問題可附截圖。發布前檢查是否包含真實姓名、私人路徑、信箱、機密或私人網址，僅提供排查需要的內容。

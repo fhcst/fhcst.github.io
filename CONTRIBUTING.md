@@ -17,7 +17,7 @@
 
 ## 接下第一個任務
 
-先讀[環境指南](docs/contributing/getting-started.md)，再到 [Issues](https://github.com/fhcst/fhcst.github.io/issues) 查找尚未有人處理的事項。在 Issue 留下：
+先讀[環境指南](blogs/contributing/getting-started.md)，再到 [Issues](https://github.com/fhcst/fhcst.github.io/issues) 查找尚未有人處理的事項。在 Issue 留下：
 
 ```text
 我想處理這個任務。
@@ -32,10 +32,10 @@
 
 ## 進行修改
 
-- 依[Git 協作流程](docs/contributing/workflow.md)同步 `main`、建立分支、提交與推送。
-- 先閱讀檔案附近的寫法；文字、成員資料與素材依[內容規範](docs/contributing/content-style.md)處理。
+- 依[Git 協作流程](blogs/contributing/workflow.md)同步 `main`、建立分支、提交與推送。
+- 先閱讀檔案附近的寫法；文字、成員資料與素材依[內容規範](blogs/contributing/content-style.md)處理。
 - 改動範圍超出原任務時，先在 Issue／PR 說明，必要時拆成另一個任務。
-- 只有調整依賴時才變更 `package.json` 和 `package-lock.json`，兩者須一致。
+- 調整依賴或專案指令時才變更 `package.json`；依賴變更須同步更新 `package-lock.json`，兩者須一致。
 - 不提交 `node_modules/`、建置產物、私人檔案、存取權杖或其他密鑰。
 - 不執行自己不了解的清除、強制推送或重設指令；衝突時先保留現場並求助。
 
@@ -50,7 +50,7 @@
 檔案沒有出現在 Git 變更清單時，可查詢是哪一條規則生效：
 
 ```sh
-git check-ignore -v -- docs/.vitepress/dist/index.html
+git check-ignore -v -- blogs/.vitepress/dist/index.html
 ```
 
 輸出的規則若以 `!` 開頭，表示該路徑是保留例外；完全沒有規則匹配時，此指令不輸出內容並以代碼 1 結束，屬正常結果，詳見 [git check-ignore 說明](https://git-scm.com/docs/git-check-ignore)。
@@ -73,7 +73,7 @@ PR 目標為 `fhcst/fhcst.github.io` 的 `main`。依範本填寫：
 - [ ] 只包含此任務需要的檔案，已閱讀完整差異。
 - [ ] 內容可查證，姓名與圖片等公開使用已取得適當同意。
 - [ ] 來源、授權和署名已交代；沒有密鑰或私人資料。
-- [ ] `npm run docs:build` 成功；若作者無法執行，由維護者在 PR 補上相同版本的建置結果。
+- [ ] `npm run blogs:build` 成功；若作者無法執行，由維護者在 PR 補上相同版本的建置結果。
 - [ ] 涉及網站的變更已預覽受影響頁面，檢查窄螢幕、圖片及連結；純根目錄規範變更可註明不適用。
 - [ ] 至少一位非作者審查者同意；未解決意見已處理。
 
@@ -85,10 +85,10 @@ PR 目標為 `fhcst/fhcst.github.io` 的 `main`。依範本填寫：
 
 收到修改意見後，在同一分支追加提交，PR 會跟著更新。請逐項回覆；最後一次修改之後，受影響的檢查與審查仍須重新確認。
 
-由維護者依[維護者檢查表](docs/contributing/maintainers.md)合併並確認部署。作者不要在 PR 剛合併時就宣稱「網站已上線」。
+由維護者依[維護者檢查表](blogs/contributing/maintainers.md)合併並確認部署。作者不要在 PR 剛合併時就宣稱「網站已上線」。
 
 ## 授權與互動
 
-提交前請讀[授權與署名](docs/contributing/licensing.md)。請確認你有權讓本次原創貢獻按本專案 CC BY-NC-SA 4.0 條件公開；既有第三方作品不得僅靠提交就改成此授權。提交不代表把著作權轉讓給老師或團隊。
+提交前請讀[授權與署名](blogs/contributing/licensing.md)。請確認你有權讓本次原創貢獻按本專案 CC BY-NC-SA 4.0 條件公開；既有第三方作品不得僅靠提交就改成此授權。提交不代表把著作權轉讓給老師或團隊。
 
 遵守[行為準則](CODE_OF_CONDUCT.md)。一般卡關見[求助方式](SUPPORT.md)；漏洞與外洩見[安全政策](SECURITY.md)，不要在公開 Issue 張貼敏感內容。

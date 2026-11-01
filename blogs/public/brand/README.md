@@ -12,9 +12,9 @@ favicon 直接使用提供的 512 × 512 PNG，交由瀏覽器依分頁圖示尺
 
 ## 修改位置
 
-- 導覽列 logo 與 favicon：`docs/.vitepress/config.mts`。
-- 首頁 hero 的 logo：`docs/index.md`。
-- 首頁 banner 與顯示樣式：`docs/.vitepress/theme/Layout.vue`。
+- 導覽列 logo 與 favicon：`blogs/.vitepress/config.mts`。
+- 首頁 hero 的 logo：`blogs/index.md`。
+- 首頁 banner 與顯示樣式：`blogs/.vitepress/theme/Layout.vue`。
 
 靜態素材網址使用 `/brand/檔名`，不包含 `public`；元件與 favicon 已處理部署的 base 路徑。
 

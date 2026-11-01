@@ -9,9 +9,9 @@
 - 專案負責人指定學生以 **VS Code＋Git** 操作。
 - 專案負責人指定 **CC BY-NC-SA** 授權；本次採 4.0 國際版，完整條文由 Creative Commons 官方提供。程式碼尚未另設軟體授權。
 - 專案負責人指定負責合併的維護者 GitHub 帳號為 **Na2CO32**；安全與行為問題的私下通報窗口為專案負責人 **CXPhoenix**。未提供專用信箱、公開私訊入口或替代窗口。
-- 專案負責人提供三張官方識別圖片，指定用於 logo、favicon 與 banner；原圖保存於 `docs/public/brand/`，尺寸、原檔名稱與使用位置見該資料夾的 `README.md`。
+- 專案負責人提供三張官方識別圖片，指定用於 logo、favicon 與 banner；原圖保存於 `blogs/public/brand/`，尺寸、原檔名稱與使用位置見該資料夾的 `README.md`。
 - 本機工作樹起始乾淨；Git origin 為 `https://github.com/fhcst/fhcst.github.io.git`，整理基底為 `main` 的 `c619d75`，交付分支為 `codex/project-docs-branding-gitignore`。
-- `package.json` 使用 VitePress `2.0.0-alpha.20`，提供 `docs:dev`、`docs:build`、`docs:preview`。
+- `package.json` 使用 VitePress `2.0.0-alpha.20`，提供 `blogs:dev`、`blogs:build`、`blogs:preview`。
 - 現有 `deploy.yml` 使用 Node.js 22，在 `main` 推送與手動執行時建置並部署 Pages；沒有 `pull_request` 觸發器。
 
 ## 本次文件提出的協作基準
@@ -37,10 +37,27 @@
 
 同意書、真實學生名單與其他私人證據不存入公開 Git；本表僅記錄處理狀態。
 
-## 本次驗證紀錄
+## 網站來源目錄遷移（2026-11-01）
+
+專案負責人要求將網站來源目錄由 `docs/` 改為 `blogs/`，讓 `docs/` 留供後續整合使用。目前尚未建立新的 `docs/`；後續整合方式另行規劃。
+
+- 網站頁面、協作指南、VitePress 設定與主題、成員資料及靜態素材一併移至 `blogs/`。
+- npm 指令統一為 `blogs:dev`、`blogs:build`、`blogs:preview`；GitHub Pages workflow 改用 `npm run blogs:build`，上傳 `blogs/.vitepress/dist`。
+- 根目錄文件、學生指南、素材說明與 PR 範本同步更新路徑與指令。下列先前驗證紀錄中的路徑及指令也以目前名稱呈現；先前建置結果不能代替遷移後的驗證。
+- 網站 URL、base 路徑處理、依賴版本與授權不變。Git 分支範例的 `docs/issue-…` 與提交類型 `docs:` 仍表示文件類型的工作，不是網站來源路徑。
+
+### 遷移後驗證
+
+- `npm run blogs:build` 成功；另以 `BASE=/migration-check/` 建置成功，驗證後已將本機產物重新建置為根路徑 `/`。
+- 24 個搬移檔案已與搬移前的 Git 版本核對：文字檔除預期的路徑與指令替換外一致（忽略換行格式差異），3 張 PNG 位元組完全一致。
+- 全部 22 份 Markdown 可用 UTF-8 讀取；54 個本機文件／素材連結存在且大小寫相符。41 個專案來源檔案均未被忽略，新的 `blogs/.vitepress/dist/` 與 `blogs/.vitepress/cache/` 仍由既有規則排除。
+- 根路徑及子路徑的本機預覽均通過 HTTP 檢查，各驗證 11 個頁面／素材及 23 個頁面引用的 JS、CSS 或圖片網址；開發服務另驗證 5 個頁面／素材回應。暫時伺服器均已停止。
+- 本次驗證涵蓋本機建置、檔案與 HTTP 回應；未重新進行瀏覽器視覺檢查，也未執行遠端 Actions 或線上部署驗證。
+
+## 先前文件整理的驗證紀錄
 
 - Node.js `v22.14.0`、npm `11.7.0`；依原鎖定檔完成 `npm ci --no-audit --no-fund`，未變更依賴版本。
-- `npm run docs:build` 成功，六個協作指南頁面已產生 HTML，標題與主要內容存在。
+- `npm run blogs:build` 成功，六個協作指南頁面已產生 HTML，標題與主要內容存在。
 - 22 份專案 Markdown 通過渲染解析、UTF-8 與空白檢查；54 個本機文件／素材連結存在且大小寫相符；3 個 Issue 範本的必要 frontmatter 欄位通過解析。
 - `.gitignore` 使用 `git check-ignore --no-index` 驗證 204 個路徑案例：129 個應忽略、75 個應保留，結果均符合預期；原規則下的 41 個已追蹤或可見檔案未被新規則誤藏。
 - `LICENSE` 條文內容與 Creative Commons 官方英文純文字一致，僅移除文末多餘空白行以通過 Git 空白檢查；儲存庫檔案的 SHA-256：`1349A4B6148492B44F629E64EED676612E234FE9A839E4F3B277C1482C8849F1`。
@@ -52,4 +69,4 @@
 
 ## 接續方式
 
-先讀本文件與 [CONTEXT.md](CONTEXT.md)，再依[維護者檢查表](docs/contributing/maintainers.md)完成角色與設定核對。任何尚未查驗的項目，在取得實際證據前保留「未確認」狀態。
+先讀本文件與 [CONTEXT.md](CONTEXT.md)，再依[維護者檢查表](blogs/contributing/maintainers.md)完成角色與設定核對。任何尚未查驗的項目，在取得實際證據前保留「未確認」狀態。

@@ -12,14 +12,14 @@ title: 內容與素材規範
 
 | 想修改的內容 | 主要位置 | 注意事項 |
 | --- | --- | --- |
-| 首頁標語與特色 | `docs/index.md` | 保留頂端 YAML 格式與縮排 |
-| 工作隊介紹與沿革 | `docs/about.md` | 事實先向負責人核對 |
-| 成員姓名、職稱、介紹與連結 | `docs/.vitepress/team.ts` | 不必為了換介紹重寫頁面元件 |
-| 成員頁面排列與元件 | `docs/team.md` | 含 Vue 程式；改動後需檢查頁面 |
-| 頭像 | `docs/public/avatars/` | 核對檔名、大小寫、公開使用同意與來源 |
-| logo、favicon 與 banner | `docs/public/brand/` | 使用負責人提供的素材；來源與使用位置見資料夾內的 `README.md` |
-| 導覽、網站標題與 base | `docs/.vitepress/config.mts` | 先討論影響，保持根路徑與子路徑部署可用 |
-| 協作教學 | `docs/contributing/` | 更新相關規則與範本，避免互相矛盾 |
+| 首頁標語與特色 | `blogs/index.md` | 保留頂端 YAML 格式與縮排 |
+| 工作隊介紹與沿革 | `blogs/about.md` | 事實先向負責人核對 |
+| 成員姓名、職稱、介紹與連結 | `blogs/.vitepress/team.ts` | 不必為了換介紹重寫頁面元件 |
+| 成員頁面排列與元件 | `blogs/team.md` | 含 Vue 程式；改動後需檢查頁面 |
+| 頭像 | `blogs/public/avatars/` | 核對檔名、大小寫、公開使用同意與來源 |
+| logo、favicon 與 banner | `blogs/public/brand/` | 使用負責人提供的素材；來源與使用位置見資料夾內的 `README.md` |
+| 導覽、網站標題與 base | `blogs/.vitepress/config.mts` | 先討論影響，保持根路徑與子路徑部署可用 |
+| 協作教學 | `blogs/contributing/` | 更新相關規則與範本，避免互相矛盾 |
 | 部署與依賴 | `.github/workflows/`、套件設定 | 由維護者評估，不混入一般內容 PR |
 
 ## 事實、示例與個資
@@ -38,11 +38,11 @@ title: 內容與素材規範
 - 變更 YAML frontmatter 時維持 `---`、欄位與縮排，不把一般內文放進設定區。
 - 檔名以簡短英文、小寫與連字號為主，避免空白；大小寫須完全一致。
 
-新協作指南以相對 `.md` 連結互連，例如 `[環境指南](getting-started.md)`。連到不在 `docs/` 的儲存庫文件時，使用 GitHub 檔案網址，避免 VitePress 將它誤認為網站頁面。新增頁面後需考慮讀者從哪個入口找到，必要的導覽修改另行說明。
+新協作指南以相對 `.md` 連結互連，例如 `[環境指南](getting-started.md)`。連到不在 `blogs/` 的儲存庫文件時，使用 GitHub 檔案網址，避免 VitePress 將它誤認為網站頁面。新增頁面後需考慮讀者從哪個入口找到，必要的導覽修改另行說明。
 
 ## 圖片與路徑
 
-網站素材放在 `docs/public/`。例如檔案 `docs/public/avatars/alex.svg` 在網站以 `/avatars/alex.svg` 引用，網址不包含 `public`。不同作業系統對大小寫的處理可能不同，請使用完全相同的檔名。
+網站素材放在 `blogs/public/`。例如檔案 `blogs/public/avatars/alex.svg` 在網站以 `/avatars/alex.svg` 引用，網址不包含 `public`。不同作業系統對大小寫的處理可能不同，請使用完全相同的檔名。
 
 一般 Markdown 圖片可這樣寫；此例使用專案既有檔案，只示範路徑，不代表已核實其來源：
 
@@ -52,7 +52,7 @@ title: 內容與素材規範
 
 替代文字說明圖片傳達的資訊，不只寫「圖片」。截圖需裁掉無關畫面並遮蔽個資。不要以圖片取代可直接閱讀的長段文字。
 
-`docs/team.md` 已用 `withBase` 處理團隊元件頭像路徑，首頁 banner 與設定中的 favicon 也處理了 base。修改這些位置時，保留既有處理；不要把自己的磁碟路徑或 `localhost` 寫成正式素材網址。
+`blogs/team.md` 已用 `withBase` 處理團隊元件頭像路徑，首頁 banner 與設定中的 favicon 也處理了 base。修改這些位置時，保留既有處理；不要把自己的磁碟路徑或 `localhost` 寫成正式素材網址。
 
 ## 來源與 AI 輔助
 
