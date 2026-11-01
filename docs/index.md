@@ -3,12 +3,12 @@
 layout: home
 
 hero:
-  name: "CST 團隊"
+  name: "FHCST 山城資訊工作隊"
   text: "一起把想法做成產品"
-  tagline: 我們是一群熱愛設計與技術的夥伴，專注打造簡單、好用的數位服務。
+  tagline: FHCST 山城資訊工作隊官方網站及 blog
   image:
-    src: /logo.svg
-    alt: CST 團隊
+    src: /brand/fhcst-logo.png
+    alt: FHCST 山城資訊工作隊標誌
   actions:
     - theme: brand
       text: 認識成員

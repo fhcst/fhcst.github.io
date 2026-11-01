@@ -8,14 +8,24 @@ const base = process.env.BASE || '/'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-TW',
-  title: 'CST 團隊',
-  description: 'CST 團隊介紹：成員、理念與聯絡方式',
+  title: 'FHCST 山城資訊工作隊',
+  description: 'FHCST 山城資訊工作隊官方網站及 blog',
   base,
   // head 不會自動套用 base，要自己加
-  head: [['link', { rel: 'icon', href: `${base}logo.svg` }]],
+  head: [
+    ['link', {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '512x512',
+      href: `${base}brand/fhcst-logo.png`
+    }]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/logo.svg',
+    logo: {
+      src: '/brand/fhcst-logo.png',
+      alt: 'FHCST 山城資訊工作隊標誌'
+    },
 
     nav: [
       { text: '首頁', link: '/' },
@@ -24,12 +34,12 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/' }
+      { icon: 'github', link: 'https://github.com/fhcst/fhcst.github.io' }
     ],
 
     footer: {
       message: '用 VitePress 打造',
-      copyright: `© ${new Date().getFullYear()} CST 團隊`
+      copyright: `© ${new Date().getFullYear()} FHCST 山城資訊工作隊`
     },
 
     outline: { label: '本頁目錄' },
