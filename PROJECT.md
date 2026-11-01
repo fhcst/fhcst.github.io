@@ -1,6 +1,15 @@
 # 協作文件整理紀錄
 
-本文件供後續維護者接續工作，記錄已知事實與尚待處理事項，不代替學生的[閱讀入口](README.md)。整理日期：2026-11-01。
+本文件供後續維護者接續工作，記錄已知事實與尚待處理事項，不代替學生的[閱讀入口](README.md)。更新日期：2026-11-01。下列「目前狀態」與「剩餘待辦」為接續工作的依據；後面的整理與驗證紀錄保留各階段的證據範圍。
+
+## 目前狀態
+
+- [PR #5](https://github.com/fhcst/fhcst.github.io/pull/5) 已於 **2026-11-01 17:33:06（臺北時間）**合併至 `main`，合併提交為 `4e0198ed89fe23681d9944ba12f10df6174dc13a`。
+- [main-quality](https://github.com/fhcst/fhcst.github.io/rules/26306169) 與 [main-mergers](https://github.com/fhcst/fhcst.github.io/rules/26306170) 均為 Active，`main` 已受保護；Organization Owner 可透過 PR bypass 強制合併，學生 Team 仍遵守原有品質門檻。
+- `pr-checks.yml`、`CODEOWNERS` 與協作文件已進入 `main`；PR 建置與必要 Code Owner 核准規則已生效，CODEOWNERS API 查驗沒有錯誤。
+- 合併提交的 [GitHub Pages 建置與部署](https://github.com/fhcst/fhcst.github.io/actions/runs/41293621269)均成功；正式站的維護者及環境指南已通過 HTTP 與新內容檢查，詳見文末。
+
+規則導入與 #5 部署已完成，不再列為待合併或待啟用事項。一般學生可開始使用 Fork＋PR；實際學生帳號的完整協作演練仍列入下方待辦。
 
 ## 已確認的需求與來源
 
@@ -10,32 +19,38 @@
 - 專案負責人指定 **CC BY-NC-SA** 授權；本次採 4.0 國際版，完整條文由 Creative Commons 官方提供。程式碼尚未另設軟體授權。
 - 專案負責人指定負責合併的維護者 GitHub 帳號為 **Na2CO32**；安全與行為問題的私下通報窗口為專案負責人 **CXPhoenix**。未提供專用信箱、公開私訊入口或替代窗口。
 - 專案負責人提供三張官方識別圖片，指定用於 logo、favicon 與 banner；原圖保存於 `blogs/public/brand/`，尺寸、原檔名稱與使用位置見該資料夾的 `README.md`。
-- 本機工作樹起始乾淨；Git origin 為 `https://github.com/fhcst/fhcst.github.io.git`，整理基底為 `main` 的 `c619d75`，交付分支為 `codex/project-docs-branding-gitignore`。
+- 初次文件整理時本機工作樹乾淨；Git origin 為 `https://github.com/fhcst/fhcst.github.io.git`，當時整理基底為 `main` 的 `c619d75`，交付分支為 `codex/project-docs-branding-gitignore`。
 - `package.json` 使用 VitePress `2.0.0-alpha.20`，提供 `blogs:dev`、`blogs:build`、`blogs:preview`。
-- 現有 `deploy.yml` 使用 Node.js 22，在 `main` 推送與手動執行時建置並部署 Pages；沒有 `pull_request` 觸發器。
+- `deploy.yml` 使用 Node.js 22，在 `main` 推送與手動執行時建置並部署 Pages；PR 階段則由 #5 新增的 `pr-checks.yml` 執行 `vitepress-build`，兩者分工不同。
 
-## 本次文件提出的協作基準
+## 已採用的協作基準
 
-先認領任務、使用工作分支、以 PR 交付，至少一位非作者審查者同意後由指定維護者合併；提交前交代來源與檢查結果。這是本次待審閱的規範，不是對既有課程規定或 GitHub 設定的查驗結論。
+一般學生先認領任務，在自己的 fork 使用工作分支並以 PR 交付；提交前交代來源與檢查結果。一般學生及 CXPhoenix 的 PR 由 Na2CO32 審查與合併，Na2CO32 的 PR 由 CXPhoenix 審查。Owner 可自行決定使用 PR-only bypass 強制合併；學生不因加入合併 Team 而取得品質規則 bypass。此方案已由負責人確認、透過 #5 納入 `main`，遠端設定也已查驗。
 
-本次新增 README、貢獻與治理規則、行為與安全政策、求助說明、學生指南、授權說明，以及 Issue／PR 範本；文件與網站顯示名稱統一為「FHCST 山城資訊工作隊」，並說明官方網站及 blog 的定位。既有沿革內容與成員名單仍待查證，依賴與部署流程維持原狀。
+初次整理新增 README、貢獻與治理規則、行為與安全政策、求助說明、學生指南、授權說明，以及 Issue／PR 範本；文件與網站顯示名稱統一為「FHCST 山城資訊工作隊」，並說明官方網站及 blog 的定位。#5 再補上規則落實與 PR 建置；既有沿革內容與成員名單仍待查證，依賴版本與正式部署 workflow 未在規則導入時變更。
 
 `.gitignore` 已依專案需要重寫，分為通用、Node.js、Bun、VitePress、Python 與 Rust 規則；保留鎖定檔、共用工具設定與正式內容。這些規則供協作時使用，不代表已安裝或導入所有對應工具。
 
-## 待指定或查證事項
+## 剩餘待辦
 
-| 事項 | 目前狀態 | 後續完成條件 |
+以下只列尚未完成的工作；GitHub 規則、PR 自動建置及 #5 文件採用已完成，見上方狀態與文末證據。
+
+| 事項 | 目前狀態 | 負責與完成條件 |
 | --- | --- | --- |
-| 維護者與替代聯絡窗口 | 已查驗 CXPhoenix 為 Admin、Na2CO32 為 Maintain；替代窗口未指定 | 指定不涉入同一事件的替代窗口 |
-| 安全與行為通報管道 | 學生透過課程既有私下管道聯絡 `CXPhoenix`；未提供對外信箱或私訊入口 | 補齊對外聯絡方式，查驗私人漏洞回報設定 |
-| GitHub 保護與權限 | Team、repo 設定與兩組 Active ruleset 已套用並讀回驗證，`main` 已受保護 | 維持兩組規則分工；人員異動時重新核對 Team 與個別授權 |
-| PR 自動建置 | 本次獨立 PR 新增 `pr-checks.yml` 與 `vitepress-build`；驗證及合併狀態見文末 | 實際成功後設定必要檢查，經 Na2CO32 審查合併 |
-| 既有內容真實性 | 沿革、服務敘述與成員資料已在公開頁面標示為版型示例；範例聯絡信箱已移除，成員個別社群連結仍待確認 | 逐項向負責人核對後另開內容 PR，不將版型示例當作正式資訊 |
-| 圖片與來源 | logo 與 banner 已換用負責人提供的原圖並記錄來源；素材構成權利與六張既有頭像仍未盤點完成 | 依授權指南補齊原作者、權利與公開使用確認，必要時替換 |
-| 歷史貢獻授權 | 本次授權聲明不代替既有作者／素材權利核對 | 由負責人確認既有內容授權權限，保留必要第三方聲明 |
-| 文件正式採用 | 負責人已確認 Fork＋PR 與審查分工；此次文件更新待獨立 PR 合併 | 依團隊流程納入預設分支，不以方案同意代替 PR 正式核准 |
+| 對外安全通報管道 | 學生透過課程既有私下管道聯絡 CXPhoenix；未提供對外信箱或私訊入口。2026-11-01 查驗私人漏洞回報為 `enabled: false` | CXPhoenix 決定啟用私人漏洞回報或提供可實際使用的對外私下管道，驗證後更新安全政策；本次不變更此設定 |
+| 替代通報窗口 | 安全與行為問題的主要窗口已指定，替代窗口尚未指定 | CXPhoenix 指定不涉入同一事件的替代窗口，補齊行為與安全政策的聯絡方式 |
+| 既有內容真實性 | 沿革、服務敘述與成員資料已標示為版型示例；範例聯絡信箱已移除，成員個別社群連結仍待確認 | 負責人逐項核對，由維護者另開內容 PR；未確認前保留示例標示 |
+| 圖片與素材來源 | logo 與 banner 已記錄提供來源；素材構成權利與六張既有頭像仍未盤點完成 | 負責人及素材提供者確認原作者、授權、署名與公開使用同意，由維護者補紀錄或替換 |
+| 歷史貢獻授權 | 現行授權聲明不代替既有作者／素材權利核對 | 負責人確認歷史貢獻的授權權限，保留第三方聲明；未解決的部分明確標示範圍 |
+| 學生實際協作演練 | 已確認 PR 建置成功、規則有效及 CODEOWNERS 無錯誤；尚未以一般學生帳號走完流程，也未實測僅有審查權的學生無法合併 | Na2CO32 帶學生完成一個真實小任務：Fork、同步、PR、必要時允許 CI 執行、正式審查、合併及確認發布；日後新增正式審查者時，再驗證審查與合併權限分離 |
 
 同意書、真實學生名單與其他私人證據不存入公開 Git；本表僅記錄處理狀態。
+
+### 持續維護與另案規劃
+
+- 人員新增、畢業或卸任時，由 CXPhoenix 核對兩個 Team、個別協作者及其他組織授權，同步更新審查分工；不可只移出一個 Team 就推定權限已全數撤除。
+- 每個 PR 依最新建置、審查與內容檢查處理，合併者確認 Actions 與正式網站；Owner 使用例外不代表替他人產生核准紀錄。
+- 後續 `docs/` 整合仍留待另案規劃，目前尚未建立；這不是本次儲存庫規則導入的未完成項目。
 
 ## 網站來源目錄遷移（2026-11-01）
 
@@ -82,14 +97,22 @@
 - 本次新增 PR 建置與 CODEOWNERS，並同步協作文件；既有正式部署 workflow、依賴版本及鎖定檔不變。
 - [PR #5](https://github.com/fhcst/fhcst.github.io/pull/5) 的首次 `vitepress-build` 已[遠端成功執行](https://github.com/fhcst/fhcst.github.io/actions/runs/41292915765)，檢查來源為 GitHub Actions（app ID `15368`）。之後已啟用並讀回核對 [main-quality](https://github.com/fhcst/fhcst.github.io/rules/26306169) 與 [main-mergers](https://github.com/fhcst/fhcst.github.io/rules/26306170)。
 - 已逐項讀回驗證 Team 成員與 Write 權限、原有 Admin／Maintain、Squash-only、auto-merge 關閉、分支清理、安全選項、Fork workflow 核准、Actions 預設權限及 Pages 政策；有效 `main` 規則包含 PR、必要建置、更新限制、禁止刪除及 force push，`main` 回報 protected。初始品質規則沒有 bypass，後續依負責人要求增加下述 Owner 例外；學生 Team 的品質門檻不變。
-- CODEOWNERS API 驗證沒有錯誤。PR 在建置成功時仍回報 `REVIEW_REQUIRED`、`BLOCKED`，沒有被自動核准或合併；已指定 Na2CO32 審查。後續提交以 PR 最新 Actions 結果為準。
-- 本機 `npm run blogs:build`、Git 空白與 Markdown UTF-8 檢查通過；獨立唯讀審查的兩項文件問題已修正。本次沒有重新執行瀏覽器視覺檢查，也沒有部署；未以測試學生帳號實際嘗試合併，權限驗證以 API 設定與現有 PR 狀態為證。
-- CODEOWNERS 在此次 PR 合併至 `main` 前，尚不能自動指派後續 PR 的審查者。此次 PR 作者為 CXPhoenix，一般流程由 Na2CO32 正式核准；Owner 也可使用下述例外強制合併。自動化不代替人員審查。
+- 合併前 CODEOWNERS API 驗證沒有錯誤；當時 PR 在建置成功後仍回報 `REVIEW_REQUIRED`、`BLOCKED`，並指定 Na2CO32 審查。這是導入階段的驗證紀錄；#5 現已合併，不再處於等待審查或合併的狀態。
+- 導入 PR 開發期間，本機 `npm run blogs:build`、Git 空白與 Markdown UTF-8 檢查通過，獨立唯讀審查的兩項文件問題已修正；當時尚未部署。合併後的正式部署及線上確認結果另列下節。未以測試學生帳號實際嘗試合併，也未重新執行瀏覽器視覺檢查。
+- CODEOWNERS 與 PR workflow 已隨 #5 進入 `main`；後續 PR 可使用主分支的 owner 指派及建置流程。已核對必要核准規則與 CODEOWNERS 內容；實際學生 Fork＋PR 的完整流程仍須依待辦演練。
 
 ### Owner 強制合併例外
 
 負責人要求 Owner 可自行強制合併，以免等待他人審查造成阻擋。已在 `main-quality` 與 `main-mergers` 新增 `OrganizationAdmin` actor 的 `pull_request` bypass，讀回確認目前登入的 CXPhoenix 在兩組規則均為 `current_user_can_bypass: pull_requests_only`。其他規則參數與原本 `site-mergers` 的 Team bypass 均保持原狀。
 
-此例外允許 Organization Owner 透過 PR 略過審查與檢查條件，不允許直接推送、force push 或刪除 `main`。GitHub 的一般 PR 狀態仍可能回報 `REVIEW_REQUIRED`／`BLOCKED`，不代表 Owner 沒有 bypass 權限。本次只設定權限，不代使用者合併 PR。
+此例外允許 Organization Owner 透過 PR 略過審查與檢查條件，不允許直接推送、force push 或刪除 `main`。GitHub 的一般 PR 狀態仍可能回報 `REVIEW_REQUIRED`／`BLOCKED`，不代表 Owner 沒有 bypass 權限。設定 bypass 本身不會自動合併 PR；#5 的實際合併結果記錄如下。
+
+### #5 合併後驗證
+
+- GitHub 回報 #5 為 `MERGED`，合併時間為 `2026-11-01T09:33:06Z`（臺北時間 17:33:06）；`main` 指向 `4e0198ed89fe23681d9944ba12f10df6174dc13a`。
+- [部署 run 41293621269](https://github.com/fhcst/fhcst.github.io/actions/runs/41293621269) 對應同一合併提交，`build` 與 `deploy` 均為 success；不是用先前版本的成功結果代替此次發布。
+- 已從 `main` 查到 `.github/workflows/pr-checks.yml` 與 `.github/CODEOWNERS`，CODEOWNERS API 回報 `errors: []`；兩組 ruleset 均為 Active，`main` 回報 protected。Owner 在兩組規則仍具有 `pull_requests_only` bypass。
+- 正式站[維護者檢查表](https://www.fhcst.icu/contributing/maintainers.html)與[環境指南](https://www.fhcst.icu/contributing/getting-started.html)均回應 HTTP 200，已確認前者包含 Owner／PR-only bypass／`vitepress-build`，後者包含 Fork、`YOUR_GITHUB_USERNAME` 與 `upstream` 的新指南內容。
+- 上述證據分別確認合併、遠端建置、部署、規則與線上內容；沒有把 HTTP 內容檢查當作瀏覽器視覺檢查，也沒有宣稱已完成一般學生帳號的權限演練。
 
 較前面的「先前文件整理」紀錄保留當時的證據範圍；本節為此次遠端規則導入的接續狀態。
