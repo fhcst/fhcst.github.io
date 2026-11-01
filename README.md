@@ -19,7 +19,7 @@
 | 了解互動規範、通報不當行為 | [行為準則](CODE_OF_CONDUCT.md) |
 | 發現漏洞、金鑰或個資外洩 | [安全政策](SECURITY.md) |
 | 使用或改作本站內容 | [授權與署名](blogs/contributing/licensing.md)、[完整授權條文](LICENSE) |
-| 查詢文件用語 | [術語表](CONTEXT.md) |
+| 查詢文件用語 | [術語表](GLOSSARY.md) |
 
 ## 本機快速啟動
 
