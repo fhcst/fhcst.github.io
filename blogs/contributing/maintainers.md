@@ -8,16 +8,16 @@ title: 維護者檢查表
 
 ## 首次採用規範
 
-以下是待核對清單，未勾選項目不代表已設定：
+以下清單記錄 2026-11-01 的查驗進度；已勾選項目表示管理設定已讀回核對，未勾選項目仍待處理。首次導入 PR 的合併與 CODEOWNERS 生效狀態另見根目錄 `PROJECT.md`：
 
 - [x] 指定合併維護者為 `Na2CO32`，安全與行為問題主要通報窗口為 `CXPhoenix`。
 - [ ] 查驗維護者實際權限，補齊對外私下聯絡方式，並指定不涉及同一事件的替代通報窗口；分項進度見根目錄 `PROJECT.md`。
 - [ ] 確認學生使用自己的帳號，按需要分配權限，離開時撤除不再需要的權限。
 - [ ] 確認 Issues 已啟用；將文件與範本納入預設分支後，實際開啟新 Issue／PR 檢查範本。
-- [ ] 核對 `main-quality`：PR、至少一位非作者與 Code Owner 核准、舊核准失效、討論解決、必要建置、同步 `main`，以及禁止強制推送與刪除；品質規則沒有 bypass。
-- [ ] 核對 `main-mergers`：只限制更新，`site-mergers` 僅有 PR 模式 bypass，不能繞過另一組品質規則。
-- [ ] 確認 `pr-checks.yml` 的 `vitepress-build` 已實際成功，再以實際檢查名稱與 GitHub Actions app ID 設為必要檢查。
-- [ ] 確認 Pages 使用 GitHub Actions、`github-pages` 環境與部署權限符合需求。
+- [x] 核對 `main-quality`：PR、至少一位非作者與 Code Owner 核准、舊核准失效、討論解決、必要建置、同步 `main`，以及禁止強制推送與刪除；品質規則沒有 bypass。
+- [x] 核對 `main-mergers`：只限制更新，`site-mergers` 僅有 PR 模式 bypass，不能繞過另一組品質規則。
+- [x] 確認導入 PR 的 `vitepress-build` 已實際成功，並以實際檢查名稱與 GitHub Actions app ID 設為必要檢查；workflow 檔案仍待此次 PR 合併至 `main`。
+- [x] 確認 Pages 使用 GitHub Actions、`github-pages` 環境只允許 `main`，維持 HTTPS；本次未重新部署。
 - [ ] 確認私人漏洞回報可用，或公布可實際使用的私下安全聯絡管道。
 - [ ] 核對既有團隊敘述、範例信箱、社群連結、成員資料及素材來源。
 - [ ] 確認 CC BY-NC-SA 4.0 的授權範圍與歷史貢獻權利，保留第三方聲明。

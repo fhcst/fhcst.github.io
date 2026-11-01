@@ -28,7 +28,7 @@
 | --- | --- | --- |
 | 維護者與替代聯絡窗口 | 已查驗 CXPhoenix 為 Admin、Na2CO32 為 Maintain；替代窗口未指定 | 指定不涉入同一事件的替代窗口 |
 | 安全與行為通報管道 | 學生透過課程既有私下管道聯絡 `CXPhoenix`；未提供對外信箱或私訊入口 | 補齊對外聯絡方式，查驗私人漏洞回報設定 |
-| GitHub 保護與權限 | 已確認 Fork＋PR 方案；Team 與 repo 設定已套用，ruleset 導入進度見文末 | 依文末紀錄讀回實際設定，維持兩組規則分工 |
+| GitHub 保護與權限 | Team、repo 設定與兩組 Active ruleset 已套用並讀回驗證，`main` 已受保護 | 維持兩組規則分工；人員異動時重新核對 Team 與個別授權 |
 | PR 自動建置 | 本次獨立 PR 新增 `pr-checks.yml` 與 `vitepress-build`；驗證及合併狀態見文末 | 實際成功後設定必要檢查，經 Na2CO32 審查合併 |
 | 既有內容真實性 | 沿革、服務敘述與成員資料已在公開頁面標示為版型示例；範例聯絡信箱已移除，成員個別社群連結仍待確認 | 逐項向負責人核對後另開內容 PR，不將版型示例當作正式資訊 |
 | 圖片與來源 | logo 與 banner 已換用負責人提供的原圖並記錄來源；素材構成權利與六張既有頭像仍未盤點完成 | 依授權指南補齊原作者、權利與公開使用確認，必要時替換 |
@@ -80,7 +80,10 @@
 - 已套用僅 Squash merge、關閉 auto-merge、合併後刪除原 repo 工作分支、secret scanning 與 push protection。未開啟自動依賴升級。
 - 已設定外部 Fork workflow 需核准（`all_external_contributors`）；Actions 預設 token 保持 read，禁止 Actions 產生核准 review。Pages 維持 HTTPS、Actions 發布及只允許 `main` 的部署分支政策。
 - 本次新增 PR 建置與 CODEOWNERS，並同步協作文件；既有正式部署 workflow、依賴版本及鎖定檔不變。
-- `main-quality` 與 `main-mergers` 將在觀察到實際 PR build 成功後啟用並讀回驗證；目前不得把本段規格當成已啟用的證據。
+- [PR #5](https://github.com/fhcst/fhcst.github.io/pull/5) 的首次 `vitepress-build` 已[遠端成功執行](https://github.com/fhcst/fhcst.github.io/actions/runs/41292915765)，檢查來源為 GitHub Actions（app ID `15368`）。之後已啟用並讀回核對 [main-quality](https://github.com/fhcst/fhcst.github.io/rules/26306169) 與 [main-mergers](https://github.com/fhcst/fhcst.github.io/rules/26306170)。
+- 已逐項讀回驗證 Team 成員與 Write 權限、原有 Admin／Maintain、Squash-only、auto-merge 關閉、分支清理、安全選項、Fork workflow 核准、Actions 預設權限及 Pages 政策；有效 `main` 規則包含 PR、必要建置、更新限制、禁止刪除及 force push，`main` 回報 protected。品質規則沒有 bypass；更新限制只有 `site-mergers` 的 PR 模式 bypass。
+- CODEOWNERS API 驗證沒有錯誤。PR 在建置成功時仍回報 `REVIEW_REQUIRED`、`BLOCKED`，沒有被自動核准或合併；已指定 Na2CO32 審查。後續提交以 PR 最新 Actions 結果為準。
+- 本機 `npm run blogs:build`、Git 空白與 Markdown UTF-8 檢查通過；獨立唯讀審查的兩項文件問題已修正。本次沒有重新執行瀏覽器視覺檢查，也沒有部署；未以測試學生帳號實際嘗試合併，權限驗證以 API 設定與現有 PR 狀態為證。
 - CODEOWNERS 在此次 PR 合併至 `main` 前，尚不能自動指派後續 PR 的審查者。此次 PR 作者為 CXPhoenix，須由 Na2CO32 正式核准；自動化不代替人員審查。
 
 較前面的「先前文件整理」紀錄保留當時的證據範圍；本節為此次遠端規則導入的接續狀態。
