@@ -69,4 +69,4 @@
 
 ## 接續方式
 
-先讀本文件與 [CONTEXT.md](CONTEXT.md)，再依[維護者檢查表](blogs/contributing/maintainers.md)完成角色與設定核對。任何尚未查驗的項目，在取得實際證據前保留「未確認」狀態。
+先讀本文件與 [GLOSSARY.md](GLOSSARY.md)，再依[維護者檢查表](blogs/contributing/maintainers.md)完成角色與設定核對。任何尚未查驗的項目，在取得實際證據前保留「未確認」狀態。
