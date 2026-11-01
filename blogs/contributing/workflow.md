@@ -50,14 +50,14 @@ git switch -c docs/issue-12-team-profile upstream/main
 
 ## 2. 修改與檢查
 
-例如任務是更新成員顯示資料，主要檔案為 `docs/.vitepress/team.ts`。僅修改已確認的內容；完整檔案對照見[內容規範](content-style.md)。
+例如任務是更新成員顯示資料，主要檔案為 `blogs/.vitepress/team.ts`。僅修改已確認的內容；完整檔案對照見[內容規範](content-style.md)。
 
 可使用 VS Code 的「原始檔控制」逐檔閱讀差異，或執行：
 
 ```sh
 git diff
-npm run docs:build
-npm run docs:preview
+npm run blogs:build
+npm run blogs:preview
 ```
 
 建置成功後檢查實際頁面。預覽結束按 `Ctrl+C`。若只修改根目錄規則文件，人工檢查 GitHub Markdown 顯示與連結即可，但仍如實記錄是否執行建置。
@@ -67,7 +67,7 @@ npm run docs:preview
 以下示範只暫存成員資料檔；換成你實際修改的檔案，不習慣檢查差異前不要一次暫存所有檔案。
 
 ```sh
-git add docs/.vitepress/team.ts
+git add blogs/.vitepress/team.ts
 git diff --cached
 git commit -m "docs: 更新已確認的成員介紹"
 git push -u origin docs/issue-12-team-profile

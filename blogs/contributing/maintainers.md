@@ -36,7 +36,7 @@ title: 維護者檢查表
 
 ## 合併後確認發布
 
-目前的流程來源為 `.github/workflows/deploy.yml`：推送 `main` 或手動觸發後，執行 `npm ci` 與 `npm run docs:build`，上傳 `docs/.vitepress/dist`，再部署 Pages。`BASE` 取自 Pages 設定，本機預設為 `/`。
+目前的流程來源為 `.github/workflows/deploy.yml`：推送 `main` 或手動觸發後，執行 `npm ci` 與 `npm run blogs:build`，上傳 `blogs/.vitepress/dist`，再部署 Pages。`BASE` 取自 Pages 設定，本機預設為 `/`。
 
 - [ ] 查看對應提交的 Actions，確認建置與部署兩個工作均成功。
 - [ ] 使用實際部署網址打開受影響頁面，核對確實是本次內容，檢查圖片、連結與路徑。

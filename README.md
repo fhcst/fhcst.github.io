@@ -10,15 +10,15 @@
 
 | 你要做的事 | 先讀這份文件 |
 | --- | --- |
-| 第一次加入、安裝環境 | [學生協作指南](docs/contributing/index.md)、[環境與第一次啟動](docs/contributing/getting-started.md) |
-| 領取任務、建立分支、送出 PR | [貢獻指南](CONTRIBUTING.md)、[Git 協作流程](docs/contributing/workflow.md) |
-| 修改文字、成員資料或圖片 | [內容與素材規範](docs/contributing/content-style.md) |
-| 更換 logo、favicon 或 banner | [識別素材來源與使用位置](docs/public/brand/README.md) |
+| 第一次加入、安裝環境 | [學生協作指南](blogs/contributing/index.md)、[環境與第一次啟動](blogs/contributing/getting-started.md) |
+| 領取任務、建立分支、送出 PR | [貢獻指南](CONTRIBUTING.md)、[Git 協作流程](blogs/contributing/workflow.md) |
+| 修改文字、成員資料或圖片 | [內容與素材規範](blogs/contributing/content-style.md) |
+| 更換 logo、favicon 或 banner | [識別素材來源與使用位置](blogs/public/brand/README.md) |
 | 卡關、回報錯誤、提出建議 | [求助方式](SUPPORT.md)、[新增 Issue](https://github.com/fhcst/fhcst.github.io/issues/new/choose) |
-| 了解分工、審查與合併規則 | [專案治理](GOVERNANCE.md)、[維護者檢查表](docs/contributing/maintainers.md) |
+| 了解分工、審查與合併規則 | [專案治理](GOVERNANCE.md)、[維護者檢查表](blogs/contributing/maintainers.md) |
 | 了解互動規範、通報不當行為 | [行為準則](CODE_OF_CONDUCT.md) |
 | 發現漏洞、金鑰或個資外洩 | [安全政策](SECURITY.md) |
-| 使用或改作本站內容 | [授權與署名](docs/contributing/licensing.md)、[完整授權條文](LICENSE) |
+| 使用或改作本站內容 | [授權與署名](blogs/contributing/licensing.md)、[完整授權條文](LICENSE) |
 | 查詢文件用語 | [術語表](CONTEXT.md) |
 
 ## 本機快速啟動
@@ -29,17 +29,17 @@
 git clone https://github.com/fhcst/fhcst.github.io.git
 cd fhcst.github.io
 npm ci
-npm run docs:dev
+npm run blogs:dev
 ```
 
 以終端機顯示的本機網址開啟網站。交付前執行：
 
 ```sh
-npm run docs:build
-npm run docs:preview
+npm run blogs:build
+npm run blogs:preview
 ```
 
-建置成功後，仍須檢查受影響頁面的文字、圖片、連結和手機寬度。完整步驟與常見問題見[環境指南](docs/contributing/getting-started.md)。
+建置成功後，仍須檢查受影響頁面的文字、圖片、連結和手機寬度。完整步驟與常見問題見[環境指南](blogs/contributing/getting-started.md)。
 
 ## 專案結構
 
@@ -48,7 +48,7 @@ npm run docs:preview
   ISSUE_TEMPLATE/          回報問題、提案與求助範本
   PULL_REQUEST_TEMPLATE.md 提交變更時的說明與檢查表
   workflows/deploy.yml    main 分支的建置與 Pages 部署
-docs/
+blogs/
   index.md               網站首頁
   about.md               工作隊介紹
   team.md                工作隊成員頁面
@@ -62,7 +62,9 @@ package.json             指令與直接依賴
 package-lock.json        鎖定套件版本
 ```
 
-`docs/` 中的 Markdown 是網站來源，可能隨建置公開；根目錄文件與 `.github/` 內容也會出現在公開儲存庫。這些位置都不能存放私人名單、同意書、密碼或未公開資料。
+`blogs/` 是目前 VitePress 的網站來源目錄，包含首頁、團隊頁面、協作指南與靜態素材；`docs/` 保留供後續整合使用，目前尚未建立。來源目錄名稱不會成為網站網址的一部分，現有頁面網址維持不變。
+
+`blogs/` 中的 Markdown 可能隨建置公開；根目錄文件與 `.github/` 內容也會出現在公開儲存庫。這些位置都不能存放私人名單、同意書、密碼或未公開資料。
 
 ## 協作與發布
 
@@ -76,4 +78,4 @@ package-lock.json        鎖定套件版本
 
 本專案有權授權、且未另行標示的原創內容與原始碼，採用 [CC BY-NC-SA 4.0 國際版](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant)；完整條文見 [LICENSE](LICENSE)。第三方套件與素材依各自授權，既有素材權利仍須盤點。
 
-CC BY-NC-SA 含非商業限制，本專案因此以「公開協作專案」描述，不宣稱符合 OSI 的開源定義。重用、署名範例及程式授權的限制見[授權說明](docs/contributing/licensing.md)。
+CC BY-NC-SA 含非商業限制，本專案因此以「公開協作專案」描述，不宣稱符合 OSI 的開源定義。重用、署名範例及程式授權的限制見[授權說明](blogs/contributing/licensing.md)。

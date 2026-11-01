@@ -27,13 +27,13 @@ jobs:
       - uses: actions/configure-pages@v5
         id: pages
       - run: npm ci
-      - run: npm run docs:build
+      - run: npm run blogs:build
         env:
           # 根網站為空字串，專案網站為 /<倉庫名>
           BASE: ${{ steps.pages.outputs.base_path }}/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: blogs/.vitepress/dist
 
   deploy:
     environment:
